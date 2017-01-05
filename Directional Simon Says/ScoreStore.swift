@@ -8,6 +8,19 @@
 
 //import Foundation
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class ScoreStore {
     
@@ -15,34 +28,33 @@ class ScoreStore {
     
     var topTenSwipeScores = [Score]()
     
-    let tapScoreArchiveURL: NSURL = {
-        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    let tapScoreArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentsDirectories.first!
-        return documentDirectory.URLByAppendingPathComponent("tapScores.archive")!
+        return documentDirectory.appendingPathComponent("tapScores.archive")
     }()
     
-    let swipeScoreArchiveURL: NSURL = {
-        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    let swipeScoreArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentsDirectories.first!
-        return documentDirectory.URLByAppendingPathComponent("swipeScores.archive")!
+        return documentDirectory.appendingPathComponent("swipeScores.archive")
     }()
     
     //creates score for Tap and puts it in the array
-    func createTapScore(name: String, scoreInt: Int) -> Score {
+    func createTapScore(_ name: String, scoreInt: Int){
         let score = Score(name: name, score: scoreInt)
         
         topTenTapScores = createScores(score, scores: topTenTapScores)
-        return score
     }
     
-    func createSwipeScore(name: String, scoreInt: Int) -> Score {
+    func createSwipeScore(_ name: String, scoreInt: Int){
         let score = Score(name: name, score: scoreInt)
         
         topTenSwipeScores = createScores(score, scores: topTenSwipeScores)
-        return score
     }
     //creates the scores for both tap and swipe
-    func createScores(score: Score, var scores: [Score]) ->[Score]{
+    func createScores(_ score: Score, scores: [Score]) ->[Score]{
+        var scores = scores
         if scores.count < 10{
             scores = organizeRanks(score, scores: scores)
         } else if score.score < scores.last?.score{
@@ -55,28 +67,29 @@ class ScoreStore {
     
     //lets you know that changes for tap are being saved
     func saveTapChanges() -> Bool {
-        print("Saving Tap score to: \(tapScoreArchiveURL.path!)")
-        return NSKeyedArchiver.archiveRootObject(topTenTapScores, toFile: tapScoreArchiveURL.path!)
+        print("Saving Tap score to: \(tapScoreArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(topTenTapScores, toFile: tapScoreArchiveURL.path)
     }
     
     //lets you know that changes for swipe are being saved
     func saveSwipeChanges() -> Bool {
-        print("Saving Swipe score to: \(swipeScoreArchiveURL.path!)")
-        return NSKeyedArchiver.archiveRootObject(topTenTapScores, toFile: swipeScoreArchiveURL.path!)
+        print("Saving Swipe score to: \(swipeScoreArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(topTenTapScores, toFile: swipeScoreArchiveURL.path)
 
     }
     
     //Pushes the score onto the array and then sorts the array
-    func organizeRanks(score: Score, var scores:[Score]) -> [Score]{
+    func organizeRanks(_ score: Score, scores:[Score]) -> [Score]{
+        var scores = scores
         scores.append(score)
-        scores.sortInPlace({$0.score > $1.score})
+        scores.sort(by: {$0.score > $1.score})
         editRanks(scores)
         return scores
         
     }
     
     //Makes sure the scores all have the correct rank
-    func editRanks(scores: [Score]){
+    func editRanks(_ scores: [Score]){
         for i in 0..<scores.count{
             if i == 0 {
                 scores[i].rank = 1
@@ -91,10 +104,10 @@ class ScoreStore {
     }
     
     init() {
-        if let archivedTapScores = NSKeyedUnarchiver.unarchiveObjectWithFile(tapScoreArchiveURL.path!) as? [Score] {
+        if let archivedTapScores = NSKeyedUnarchiver.unarchiveObject(withFile: tapScoreArchiveURL.path) as? [Score] {
             topTenTapScores += archivedTapScores
         }
-        if let archivedSwipeScores = NSKeyedUnarchiver.unarchiveObjectWithFile(swipeScoreArchiveURL.path!) as? [Score] {
+        if let archivedSwipeScores = NSKeyedUnarchiver.unarchiveObject(withFile: swipeScoreArchiveURL.path) as? [Score] {
             topTenTapScores += archivedSwipeScores
         }
     }

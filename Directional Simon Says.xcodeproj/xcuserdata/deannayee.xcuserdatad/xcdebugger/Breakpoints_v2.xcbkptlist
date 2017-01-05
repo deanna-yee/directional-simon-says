@@ -26,13 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Directional Simon Says/ScoreStore.swift"
-            timestampString = "503477354.152585"
+            timestampString = "505194257.970504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "createScores(score:scores:)"
-            landmarkType = "7">
+            startingLineNumber = "11"
+            endingLineNumber = "11">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

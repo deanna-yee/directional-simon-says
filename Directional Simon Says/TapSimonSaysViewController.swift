@@ -37,15 +37,15 @@ class TapSimonSaysViewController: UIViewController {
         
     //displays the pattern and then shows all the buttons
     func displayPattern(){
-        startButton.hidden = true
-        down.hidden = true
-        up.hidden = true
-        left.hidden = true
-        right.hidden = true
-        status.hidden = true
+        startButton.isHidden = true
+        down.isHidden = true
+        up.isHidden = true
+        left.isHidden = true
+        right.isHidden = true
+        status.isHidden = true
         let delay = 0.5 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()){
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time){
             self.showPattern()
             self.delayShowAllButtons()
         }
@@ -55,17 +55,17 @@ class TapSimonSaysViewController: UIViewController {
     //shows the score and checks to see if the game is over
     func checkStatus(){
         let delay = 0.5 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()){
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time){
             self.score.text = "Score: \(self.simonSays.score)"
             if self.simonSays.gameIsOver {
                 print("game Over")
                 self.status.text = "Game Over"
-                self.down.hidden = true
-                self.up.hidden = true
-                self.left.hidden = true
-                self.right.hidden = true
-                self.gameOver.hidden = false
+                self.down.isHidden = true
+                self.up.isHidden = true
+                self.left.isHidden = true
+                self.right.isHidden = true
+                self.gameOver.isHidden = false
             }
         }
         
@@ -74,26 +74,26 @@ class TapSimonSaysViewController: UIViewController {
     //shows all the arrows so that they can be pressed
     func showAllArrowButtons(){
         down.alpha = 1.0
-        down.hidden = false
+        down.isHidden = false
         up.alpha = 1.0
-        up.hidden = false
+        up.isHidden = false
         right.alpha = 1.0
-        right.hidden = false
+        right.isHidden = false
         left.alpha = 1.0
-        left.hidden = false
-        status.hidden = false
+        left.isHidden = false
+        status.isHidden = false
     }
     
     
     //determines whether it is the your turn or showing the pattern
-    func ifYourTurn(direction: Direction){
+    func ifYourTurn(_ direction: Direction){
         if simonSays.yourTurn {
             simonSays.checkPattern(direction)
             checkStatus()
         }
         let delay = 1.0 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()){
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time){
             if !self.simonSays.yourTurn {
                 self.displayPattern()
             }
@@ -102,11 +102,11 @@ class TapSimonSaysViewController: UIViewController {
     }
     
     //causes the arrows to blink
-    func blink(t: Double, button: UIButton){
+    func blink(_ t: Double, button: UIButton){
         button.alpha = 1.0
         let delay = t * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()){
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time){
             button.alpha = 0.0
         }
         
@@ -115,12 +115,12 @@ class TapSimonSaysViewController: UIViewController {
     //goes to the array and shows the pattern
     func showPattern(){
         simonSays.createPattern()
-        var indexes = (0..<simonSays.patternAmount).generate()
+        var indexes = (0..<simonSays.patternAmount).makeIterator()
         while let i = indexes.next(){
             
             let delay = Double(i) * Double(NSEC_PER_SEC)
-            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue()){
+            let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: time){
                 self.getPattern(i)
             }
             if i == (simonSays.patternAmount - 1){
@@ -132,34 +132,32 @@ class TapSimonSaysViewController: UIViewController {
     }
     
     //determines whether the arrow is hidden or not
-    func getPattern(i: Int){
+    func getPattern(_ i: Int){
         switch simonSays.pattern[i] {
-        case Direction.Down:
-            up.hidden = true
-            left.hidden = true
-            right.hidden = true
-            down.hidden = false
+        case Direction.down:
+            up.isHidden = true
+            left.isHidden = true
+            right.isHidden = true
+            down.isHidden = false
             blink(0.5, button: self.down)
-        case Direction.Left:
-            down.hidden = true
-            up.hidden = true
-            right.hidden = true
-            left.hidden = false
+        case Direction.left:
+            down.isHidden = true
+            up.isHidden = true
+            right.isHidden = true
+            left.isHidden = false
             blink(0.5, button: self.left)
-        case Direction.Right:
-            down.hidden = true
-            up.hidden = true
-            left.hidden = true
-            right.hidden = false
+        case Direction.right:
+            down.isHidden = true
+            up.isHidden = true
+            left.isHidden = true
+            right.isHidden = false
             blink(0.5, button: self.right)
-        case Direction.Up:
-            down.hidden = true
-            left.hidden = true
-            right.hidden = true
-            up.hidden = false
+        case Direction.up:
+            down.isHidden = true
+            left.isHidden = true
+            right.isHidden = true
+            up.isHidden = false
             blink(0.5, button: self.up)
-        default:
-            break
         }
         
     }
@@ -167,43 +165,43 @@ class TapSimonSaysViewController: UIViewController {
     //puts a delay for all the buttons to be shown
     func delayShowAllButtons(){
         let delay = Double(simonSays.patternAmount/2 + simonSays.patternAmount) * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()){
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time){
             self.showAllArrowButtons()
         }
     }
 
     //starts the game of simon says
-    @IBAction func start(sender: AnyObject) {
+    @IBAction func start(_ sender: AnyObject) {
         simonSays.score = 0
         displayPattern()
     }
     
     //checks to see if the down button is the correct button to press
-    @IBAction func pressDown(sender: AnyObject) {
-        ifYourTurn(Direction.Down)
+    @IBAction func pressDown(_ sender: AnyObject) {
+        ifYourTurn(Direction.down)
         
     }
     
     //checks to see if the up button is the correct button to press
-    @IBAction func pressUp(sender: AnyObject) {
-        ifYourTurn(Direction.Up)
+    @IBAction func pressUp(_ sender: AnyObject) {
+        ifYourTurn(Direction.up)
     }
     
     //checks to see if the left button is the correct button to press
-    @IBAction func pressLeft(sender: AnyObject) {
-        ifYourTurn(Direction.Left)
+    @IBAction func pressLeft(_ sender: AnyObject) {
+        ifYourTurn(Direction.left)
     }
     
     //checks to see if the right button is the correct button to press
-    @IBAction func pressRight(sender: AnyObject) {
-        ifYourTurn(Direction.Right)
+    @IBAction func pressRight(_ sender: AnyObject) {
+        ifYourTurn(Direction.right)
     }
     
     //passes information to the final score view controller
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Continue" {
-            let finalViewController = segue.destinationViewController as! FinalScoreTapViewController
+            let finalViewController = segue.destination as! FinalScoreTapViewController
             finalViewController.score = simonSays.score
             finalViewController.scoreStore = scoreStore
         }
@@ -213,8 +211,8 @@ class TapSimonSaysViewController: UIViewController {
     //hides information that doesn't need to be shown in the beginning
     override func viewDidLoad() {
         super.viewDidLoad()
-        status.hidden = true
-        gameOver.hidden = true
+        status.isHidden = true
+        gameOver.isHidden = true
         
     }
     

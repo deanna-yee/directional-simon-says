@@ -24,20 +24,20 @@ class FinalScoreSwipeViewController: UIViewController, UITextFieldDelegate {
     var scoreStore : ScoreStore!
     
     //Dismiss keyboard by tapping the background
-    @IBAction func backgroundTapped(sender: AnyObject) {
+    @IBAction func backgroundTapped(_ sender: AnyObject) {
         view.endEditing(true)
     }
     
 
     //Gets the name from the UITextField
-    @IBAction func getName(sender: UITextField) {
-        if let text = sender.text where !text.isEmpty {
+    @IBAction func getName(_ sender: UITextField) {
+        if let text = sender.text, !text.isEmpty {
             name = text
         }
     }
     
     //Dismiss keyboard by hitting return
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -48,28 +48,28 @@ class FinalScoreSwipeViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Adds the score to the array and goes to the table view of the top ten
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SwipeDone" {
             if name != nil{
                 addScore()
             }
-            let topTenSwipeViewController = segue.destinationViewController as! SwipeTop10TableViewController
+            let topTenSwipeViewController = segue.destination as! SwipeTop10TableViewController
             topTenSwipeViewController.scoreStore = scoreStore
         } else if segue.identifier == "SwipeCancel"{
-            let mainMenuViewController = segue.destinationViewController as! MainMenuViewController
+            let mainMenuViewController = segue.destination as! MainMenuViewController
             mainMenuViewController.scoreStore = scoreStore
         }
         
     }
     
     //dismiss keyboard when cancel or done is pressed
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         view.endEditing(true)
     }
     
     //displays the score
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreLabel.text = "Score: \(score)"
+        scoreLabel.text = "Score: \(score!)"
     }
 }
