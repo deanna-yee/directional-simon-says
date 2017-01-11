@@ -109,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qGm-TF-L7B" id="VwJ-Jg-y2z">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SK2-7g-9Ki">
@@ -433,16 +433,16 @@
                                     <segue destination="udG-3i-1iN" kind="show" identifier="SwipeContinue" id="6G1-R8-cMn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up arrow color" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-xB-Zac">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up arrow color" highlightedImage="up arrow" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-xB-Zac">
                                 <rect key="frame" x="112.5" y="79" width="150" height="150"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right arrow color" translatesAutoresizingMaskIntoConstraints="NO" id="owO-ke-7hP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right arrow color" highlightedImage="right arrow" translatesAutoresizingMaskIntoConstraints="NO" id="owO-ke-7hP">
                                 <rect key="frame" x="209" y="259" width="150" height="150"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left arrow color" translatesAutoresizingMaskIntoConstraints="NO" id="uQQ-Dr-qaR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left arrow color" highlightedImage="left arrow" translatesAutoresizingMaskIntoConstraints="NO" id="uQQ-Dr-qaR">
                                 <rect key="frame" x="16" y="259" width="150" height="150"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down arrow color" translatesAutoresizingMaskIntoConstraints="NO" id="9n1-cA-977">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down arrow color" highlightedImage="down arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9n1-cA-977">
                                 <rect key="frame" x="112" y="452" width="150" height="150"/>
                             </imageView>
                         </subviews>
@@ -835,7 +835,7 @@
                                 <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mwq-fi-F7X" id="ggi-af-HbK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTX-7o-dgN">
@@ -914,6 +914,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="v8u-00-b9U" customClass="InstructionsTabBarController" customModule="Directional_Simon_Says" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="kba-oF-6aZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -940,8 +941,8 @@
         <image name="up arrow color" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="czS-XV-xZb"/>
-        <segue reference="mar-ah-UKC"/>
+        <segue reference="wSj-I8-KEU"/>
         <segue reference="PP5-eH-49w"/>
+        <segue reference="mar-ah-UKC"/>
     </inferredMetricsTieBreakers>
 </document>

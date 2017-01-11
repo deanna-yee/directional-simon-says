@@ -75,11 +75,15 @@ class SwipeSimonSaysViewController: UIViewController {
     func showAllArrowButtons(){
         down.alpha = 1.0
         down.isHidden = false
+        down.isHighlighted = false
         up.alpha = 1.0
         up.isHidden = false
+        up.isHighlighted = false
         right.alpha = 1.0
         right.isHidden = false
+        right.isHighlighted = false
         left.alpha = 1.0
+        left.isHighlighted = false
         left.isHidden = false
         status.isHidden = false
         simonSays.yourTurn = true
@@ -93,9 +97,13 @@ class SwipeSimonSaysViewController: UIViewController {
             simonSays.checkPattern(direction)
             checkStatus()
         }
-        let delay = 1.0 * Double(NSEC_PER_SEC)
+        let delay = 0.5 * Double(NSEC_PER_SEC)
         let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: time){
+            self.down.isHighlighted = false
+            self.right.isHighlighted = false
+            self.up.isHighlighted = false
+            self.left.isHighlighted = false
             if !self.simonSays.yourTurn {
                 self.disableGestureInImages()
                 self.displayPattern()
@@ -192,21 +200,25 @@ class SwipeSimonSaysViewController: UIViewController {
     
     //Sends a Direction of right when the arrow is swiped right
     func rightSwipe(_ sender: UISwipeGestureRecognizer){
+        right.isHighlighted = true
         ifYourTurn(Direction.right)
     }
     
     //Sends a Direction of left when the arrow is swiped left
     func leftSwipe(_ sender: UISwipeGestureRecognizer){
+        left.isHighlighted = true
         ifYourTurn(Direction.left)
     }
     
     //Sends a Direction of up when the arrow is swiped up
     func upSwipe(_ sender: UISwipeGestureRecognizer){
+        up.isHighlighted = true
         ifYourTurn(Direction.up)
     }
     
     //Sends a Direction of down when the arrow is swiped down
     func downSwipe(_ sender: UISwipeGestureRecognizer){
+        down.isHighlighted = true
         ifYourTurn(Direction.down)
     }
 
