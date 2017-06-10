@@ -10,18 +10,14 @@
 		F72C05A11E00F54800F2AC7A /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C05A01E00F54800F2AC7A /* ScoreStore.swift */; };
 		F72C05A31E00F78F00F2AC7A /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C05A21E00F78F00F2AC7A /* Score.swift */; };
 		F72C05A51E010CE300F2AC7A /* FinalScoreTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C05A41E010CE300F2AC7A /* FinalScoreTapViewController.swift */; };
-		F76CDD4F1E1CC51000865D79 /* InstructionsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CDD4E1E1CC51000865D79 /* InstructionsTabBarController.swift */; };
-		F76CDD511E1DD63C00865D79 /* TapInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CDD501E1DD63C00865D79 /* TapInstructionsViewController.swift */; };
-		F76CDD531E1DD65A00865D79 /* SwipeInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76CDD521E1DD65A00865D79 /* SwipeInstructionsViewController.swift */; };
-		F76CDD561E1F3E8500865D79 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76CDD551E1F3E8500865D79 /* iAd.framework */; };
 		F7703CA81DFCCC4200618AEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7703CA71DFCCC4200618AEB /* Assets.xcassets */; };
 		F7703CAA1DFCDAD000618AEB /* TapSimonSaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7703CA91DFCDAD000618AEB /* TapSimonSaysViewController.swift */; };
 		F7703CB01DFCDB4D00618AEB /* TapTop10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7703CAF1DFCDB4D00618AEB /* TapTop10TableViewController.swift */; };
 		F7703CB51DFF5B9000618AEB /* SimonSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7703CB41DFF5B9000618AEB /* SimonSays.swift */; };
 		F7D884761E020CDB0078D502 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D884751E020CDB0078D502 /* ScoreCell.swift */; };
-		F7D8847A1E031C860078D502 /* FinalScoreSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D884771E031C860078D502 /* FinalScoreSwipeViewController.swift */; };
-		F7D8847B1E031C860078D502 /* SwipeSimonSaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D884781E031C860078D502 /* SwipeSimonSaysViewController.swift */; };
-		F7D8847C1E031C860078D502 /* SwipeTop10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D884791E031C860078D502 /* SwipeTop10TableViewController.swift */; };
+		F7D8847A1E031C860078D502 /* FinalScoreSwipeViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D884771E031C860078D502 /* FinalScoreSwipeViewController copy.swift */; };
+		F7D8847B1E031C860078D502 /* SwipeSimonSaysViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D884781E031C860078D502 /* SwipeSimonSaysViewController copy.swift */; };
+		F7D8847C1E031C860078D502 /* SwipeTop10TableViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D884791E031C860078D502 /* SwipeTop10TableViewController copy.swift */; };
 		F7D8847E1E0320950078D502 /* ScoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8847D1E0320950078D502 /* ScoreTabBarController.swift */; };
 		F7D884801E0328B40078D502 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8847F1E0328B40078D502 /* MainMenuViewController.swift */; };
 		F7ECD0011DFB6E4F009006F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ECD0001DFB6E4F009006F1 /* AppDelegate.swift */; };
@@ -33,18 +29,14 @@
 		F72C05A01E00F54800F2AC7A /* ScoreStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
 		F72C05A21E00F78F00F2AC7A /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		F72C05A41E010CE300F2AC7A /* FinalScoreTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalScoreTapViewController.swift; sourceTree = "<group>"; };
-		F76CDD4E1E1CC51000865D79 /* InstructionsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsTabBarController.swift; sourceTree = "<group>"; };
-		F76CDD501E1DD63C00865D79 /* TapInstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapInstructionsViewController.swift; sourceTree = "<group>"; };
-		F76CDD521E1DD65A00865D79 /* SwipeInstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeInstructionsViewController.swift; sourceTree = "<group>"; };
-		F76CDD551E1F3E8500865D79 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		F7703CA71DFCCC4200618AEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7703CA91DFCDAD000618AEB /* TapSimonSaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapSimonSaysViewController.swift; sourceTree = "<group>"; };
 		F7703CAF1DFCDB4D00618AEB /* TapTop10TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapTop10TableViewController.swift; sourceTree = "<group>"; };
 		F7703CB41DFF5B9000618AEB /* SimonSays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimonSays.swift; sourceTree = "<group>"; };
 		F7D884751E020CDB0078D502 /* ScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
-		F7D884771E031C860078D502 /* FinalScoreSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalScoreSwipeViewController.swift; sourceTree = "<group>"; };
-		F7D884781E031C860078D502 /* SwipeSimonSaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeSimonSaysViewController.swift; sourceTree = "<group>"; };
-		F7D884791E031C860078D502 /* SwipeTop10TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTop10TableViewController.swift; sourceTree = "<group>"; };
+		F7D884771E031C860078D502 /* FinalScoreSwipeViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FinalScoreSwipeViewController copy.swift"; sourceTree = "<group>"; };
+		F7D884781E031C860078D502 /* SwipeSimonSaysViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeSimonSaysViewController copy.swift"; sourceTree = "<group>"; };
+		F7D884791E031C860078D502 /* SwipeTop10TableViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeTop10TableViewController copy.swift"; sourceTree = "<group>"; };
 		F7D8847D1E0320950078D502 /* ScoreTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTabBarController.swift; sourceTree = "<group>"; };
 		F7D8847F1E0328B40078D502 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		F7ECCFFD1DFB6E4F009006F1 /* Directional Simon Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Directional Simon Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,27 +51,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F76CDD561E1F3E8500865D79 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F76CDD541E1F3E8400865D79 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F76CDD551E1F3E8500865D79 /* iAd.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F7ECCFF41DFB6E4F009006F1 = {
 			isa = PBXGroup;
 			children = (
 				F7ECCFFF1DFB6E4F009006F1 /* Directional Simon Says */,
 				F7ECCFFE1DFB6E4F009006F1 /* Products */,
-				F76CDD541E1F3E8400865D79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,15 +82,12 @@
 				F7D8847F1E0328B40078D502 /* MainMenuViewController.swift */,
 				F7703CA91DFCDAD000618AEB /* TapSimonSaysViewController.swift */,
 				F7703CAF1DFCDB4D00618AEB /* TapTop10TableViewController.swift */,
-				F7D884771E031C860078D502 /* FinalScoreSwipeViewController.swift */,
-				F7D884781E031C860078D502 /* SwipeSimonSaysViewController.swift */,
-				F7D884791E031C860078D502 /* SwipeTop10TableViewController.swift */,
+				F7D884771E031C860078D502 /* FinalScoreSwipeViewController copy.swift */,
+				F7D884781E031C860078D502 /* SwipeSimonSaysViewController copy.swift */,
+				F7D884791E031C860078D502 /* SwipeTop10TableViewController copy.swift */,
 				F72C05A41E010CE300F2AC7A /* FinalScoreTapViewController.swift */,
 				F7703CB41DFF5B9000618AEB /* SimonSays.swift */,
 				F7D8847D1E0320950078D502 /* ScoreTabBarController.swift */,
-				F76CDD4E1E1CC51000865D79 /* InstructionsTabBarController.swift */,
-				F76CDD501E1DD63C00865D79 /* TapInstructionsViewController.swift */,
-				F76CDD521E1DD65A00865D79 /* SwipeInstructionsViewController.swift */,
 				F7ECD0001DFB6E4F009006F1 /* AppDelegate.swift */,
 				F7ECD0041DFB6E4F009006F1 /* Main.storyboard */,
 				F7703CA71DFCCC4200618AEB /* Assets.xcassets */,
@@ -145,13 +124,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = DeannaYee;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = cisstudent;
 				TargetAttributes = {
 					F7ECCFFC1DFB6E4F009006F1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = W6NQHWJ977;
-						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -193,18 +170,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F72C05A11E00F54800F2AC7A /* ScoreStore.swift in Sources */,
-				F7D8847C1E031C860078D502 /* SwipeTop10TableViewController.swift in Sources */,
+				F7D8847C1E031C860078D502 /* SwipeTop10TableViewController copy.swift in Sources */,
 				F72C05A51E010CE300F2AC7A /* FinalScoreTapViewController.swift in Sources */,
 				F7D884801E0328B40078D502 /* MainMenuViewController.swift in Sources */,
-				F7D8847A1E031C860078D502 /* FinalScoreSwipeViewController.swift in Sources */,
+				F7D8847A1E031C860078D502 /* FinalScoreSwipeViewController copy.swift in Sources */,
 				F7703CB01DFCDB4D00618AEB /* TapTop10TableViewController.swift in Sources */,
 				F7D8847E1E0320950078D502 /* ScoreTabBarController.swift in Sources */,
 				F7703CB51DFF5B9000618AEB /* SimonSays.swift in Sources */,
-				F76CDD511E1DD63C00865D79 /* TapInstructionsViewController.swift in Sources */,
-				F76CDD4F1E1CC51000865D79 /* InstructionsTabBarController.swift in Sources */,
-				F7D8847B1E031C860078D502 /* SwipeSimonSaysViewController.swift in Sources */,
+				F7D8847B1E031C860078D502 /* SwipeSimonSaysViewController copy.swift in Sources */,
 				F7703CAA1DFCDAD000618AEB /* TapSimonSaysViewController.swift in Sources */,
-				F76CDD531E1DD65A00865D79 /* SwipeInstructionsViewController.swift in Sources */,
 				F72C05A31E00F78F00F2AC7A /* Score.swift in Sources */,
 				F7D884761E020CDB0078D502 /* ScoreCell.swift in Sources */,
 				F7ECD0011DFB6E4F009006F1 /* AppDelegate.swift in Sources */,
@@ -251,12 +225,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Deanna Yee (7HH8L5H32B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Deanna Yee (7HH8L5H32B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -303,12 +275,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Deanna Yee (W6NQHWJ977)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Deanna Yee (W6NQHWJ977)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -334,16 +304,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W6NQHWJ977;
 				INFOPLIST_FILE = "Directional Simon Says/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "DeannaYee.Directional-Simon-Says";
+				PRODUCT_BUNDLE_IDENTIFIER = "smccd.Directional-Simon-Says";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -351,16 +317,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = W6NQHWJ977;
 				INFOPLIST_FILE = "Directional Simon Says/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "DeannaYee.Directional-Simon-Says";
+				PRODUCT_BUNDLE_IDENTIFIER = "smccd.Directional-Simon-Says";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

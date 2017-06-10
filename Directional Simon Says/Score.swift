@@ -18,10 +18,10 @@ class Score: NSObject, NSCoding {
     var rank: Int
     
     //Writes to data file
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: "name")
-        aCoder.encode(score, forKey: "score")
-        aCoder.encode(rank, forKey: "rank")
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeInteger(score, forKey: "score")
+        aCoder.encodeInteger(rank, forKey: "rank")
     }
     
     //Initializer for Score
@@ -34,9 +34,9 @@ class Score: NSObject, NSCoding {
     
     //Initializer to get info from data file
     required init(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObject(forKey: "name") as! String
-        score = aDecoder.decodeInteger(forKey: "score")
-        rank = aDecoder.decodeInteger(forKey: "rank")
+        name = aDecoder.decodeObjectForKey("name") as! String
+        score = aDecoder.decodeIntegerForKey("score")
+        rank = aDecoder.decodeIntegerForKey("rank")
         
         super.init()
     }

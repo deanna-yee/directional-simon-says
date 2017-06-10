@@ -16,7 +16,7 @@ class TapTop10TableViewController: UITableViewController {
     var scoresCount: Int = 0
     
     //Only shows the top 10 scores
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if scoreStore.topTenTapScores.count < 10{
             scoresCount = scoreStore.topTenTapScores.count
         }
@@ -27,10 +27,10 @@ class TapTop10TableViewController: UITableViewController {
     }
     
     //Displays the scores into the table
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Create an instance of UITableViewCell, with default appearance
         //let cell = tableView.dequeueReusableCellWithIdentifier("ScoreCell", forIndexPath: indexPath) as! ScoreCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCell", for: indexPath) as! ScoreCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ScoreCell", forIndexPath: indexPath) as! ScoreCell
         
         //Set the text on the cell with the description of the item
         //That is at the nth index of items, where n = row this cell
@@ -45,9 +45,9 @@ class TapTop10TableViewController: UITableViewController {
     }
     
     //passes the score store back to the main menu
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Main" {
-            let mainViewController = segue.destination as! MainMenuViewController
+            let mainViewController = segue.destinationViewController as! MainMenuViewController
             mainViewController.scoreStore = scoreStore
         }
         
@@ -62,7 +62,7 @@ class TapTop10TableViewController: UITableViewController {
             scoreStore = tbvc.scoreStore
         }
         
-        let height = UIApplication.shared.statusBarFrame.height
+        let height = UIApplication.sharedApplication().statusBarFrame.height
         
         let insets = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets

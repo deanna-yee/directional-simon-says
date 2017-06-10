@@ -10,13 +10,13 @@ import Foundation
 
 //The different directions
 enum Direction: Int{
-    case up = 0
-    case right = 1
-    case down = 2
-    case left = 3
+    case Up = 0
+    case Right = 1
+    case Down = 2
+    case Left = 3
     
     //returns the count of cases in Direction
-    static let count: Int = Direction.left.rawValue + 1
+    static let count: Int = Direction.Left.rawValue + 1
     
 }
 
@@ -46,7 +46,7 @@ class SimonSays {
     }
     
     //checks to see if the direction pressed or swiped is correct
-    func checkCurrentPatternPosition(_ player: Direction) -> Bool{
+    func checkCurrentPatternPosition(player: Direction) -> Bool{
         if player == pattern[patternIndex] {
             return true
         } else {
@@ -55,7 +55,7 @@ class SimonSays {
     }
     
     //checks the pattern
-    func checkPattern(_ player: Direction){
+    func checkPattern(player: Direction){
         if checkCurrentPatternPosition(player) == true {
             if (patternIndex == (patternAmount - 1)) {
                 incrementScoreAndPattern()

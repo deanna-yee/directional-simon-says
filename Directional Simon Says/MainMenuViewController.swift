@@ -18,28 +18,25 @@ class MainMenuViewController: UIViewController {
     var scoreStore : ScoreStore!
     
     //passes the store to the table or to the tap simon says controller
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "scores" {
-            let topTenViewController = segue.destination as!
+            let topTenViewController = segue.destinationViewController as!
                 ScoreTabBarController
             topTenViewController.scoreStore = scoreStore
         }
         else if segue.identifier == "Tap" {
-            let tapSimonSaysViewController = segue.destination as! TapSimonSaysViewController
+            let tapSimonSaysViewController = segue.destinationViewController as! TapSimonSaysViewController
             tapSimonSaysViewController.scoreStore = scoreStore
         }
         else if segue.identifier == "Swipe"{
-            let swipeSimonSaysViewController = segue.destination as! SwipeSimonSaysViewController
+            let swipeSimonSaysViewController = segue.destinationViewController as! SwipeSimonSaysViewController
             swipeSimonSaysViewController.scoreStore = scoreStore
-        }
-        else if segue.identifier == "instructions" {
-            let instructionsViewController = segue.destination as! InstructionsTabBarController
-            instructionsViewController.scoreStore = scoreStore
         }
         
         
         
     }
+    
     
     
 }
