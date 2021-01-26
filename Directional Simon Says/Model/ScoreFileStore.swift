@@ -9,45 +9,47 @@
 //import Foundation
 import UIKit
 
-class ScoreStore {
+class ScoreFileStore {
     
     var topTenTapScores = [Score]()
     
     var topTenSwipeScores = [Score]()
     
     let tapScoreArchiveURL: NSURL = {
-        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentsDirectories.first!
-        return documentDirectory.URLByAppendingPathComponent("tapScores.archive")!
+        return documentDirectory.appendingPathComponent("tapScores.archive") as NSURL
     }()
     
     let swipeScoreArchiveURL: NSURL = {
-        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentsDirectories.first!
-        return documentDirectory.URLByAppendingPathComponent("swipeScores.archive")!
+        return documentDirectory.appendingPathComponent("swipeScores.archive") as NSURL
     }()
     
     //creates score for Tap and puts it in the array
     func createTapScore(name: String, scoreInt: Int) -> Score {
         let score = Score(name: name, score: scoreInt)
         
-        topTenTapScores = createScores(score, scores: topTenTapScores)
+        topTenTapScores = createScores(score: score, scores: topTenTapScores)
         return score
     }
     
     func createSwipeScore(name: String, scoreInt: Int) -> Score {
         let score = Score(name: name, score: scoreInt)
         
-        topTenSwipeScores = createScores(score, scores: topTenSwipeScores)
+        topTenSwipeScores = createScores(score: score, scores: topTenSwipeScores)
         return score
     }
-    //creates the scores for both tap and swipe
-    func createScores(score: Score, var scores: [Score]) ->[Score]{
+    
+    //creates the top 10 scores list
+    func createScores(score: Score,  scores: [Score]) ->[Score]{
+        var scores = scores
         if scores.count < 10{
-            scores = organizeRanks(score, scores: scores)
-        } else if score.score < scores.last?.score{
+            scores = organizeRanks(score: score, scores: scores)
+        } else if let lastScore = scores.last?.score, score.score < lastScore{
             scores.removeLast()
-            scores = organizeRanks(score, scores: scores)
+            scores = organizeRanks(score: score, scores: scores)
         }
         return scores
     
@@ -67,10 +69,11 @@ class ScoreStore {
     }
     
     //Pushes the score onto the array and then sorts the array
-    func organizeRanks(score: Score, var scores:[Score]) -> [Score]{
+    func organizeRanks(score: Score, scores:[Score]) -> [Score]{
+        var scores = scores
         scores.append(score)
-        scores.sortInPlace({$0.score > $1.score})
-        editRanks(scores)
+        scores.sort(by: {$0.score > $1.score})
+        editRanks(scores: scores)
         return scores
         
     }
@@ -91,10 +94,10 @@ class ScoreStore {
     }
     
     init() {
-        if let archivedTapScores = NSKeyedUnarchiver.unarchiveObjectWithFile(tapScoreArchiveURL.path!) as? [Score] {
+        if let archivedTapScores = NSKeyedUnarchiver.unarchiveObject(withFile: tapScoreArchiveURL.path!) as? [Score] {
             topTenTapScores += archivedTapScores
         }
-        if let archivedSwipeScores = NSKeyedUnarchiver.unarchiveObjectWithFile(swipeScoreArchiveURL.path!) as? [Score] {
+        if let archivedSwipeScores = NSKeyedUnarchiver.unarchiveObject(withFile: swipeScoreArchiveURL.path!) as? [Score] {
             topTenTapScores += archivedSwipeScores
         }
     }

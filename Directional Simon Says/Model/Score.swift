@@ -10,19 +10,19 @@
 import UIKit
 
 class Score: NSObject, NSCoding {
+    //Write to Data File
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(score, forKey: "score")
+        coder.encode(rank, forKey: "rank")
+    }
+    
     //name connected to score
     let name: String
     //the score the person got
     let score: Int
     //the rank if in the top ten
     var rank: Int
-    
-    //Writes to data file
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: "name")
-        aCoder.encodeInteger(score, forKey: "score")
-        aCoder.encodeInteger(rank, forKey: "rank")
-    }
     
     //Initializer for Score
     init(name: String, score: Int){
@@ -34,9 +34,9 @@ class Score: NSObject, NSCoding {
     
     //Initializer to get info from data file
     required init(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObjectForKey("name") as! String
-        score = aDecoder.decodeIntegerForKey("score")
-        rank = aDecoder.decodeIntegerForKey("rank")
+        name = aDecoder.decodeObject(forKey: "name") as! String
+        score = aDecoder.decodeInteger(forKey: "score")
+        rank = aDecoder.decodeInteger(forKey: "rank")
         
         super.init()
     }

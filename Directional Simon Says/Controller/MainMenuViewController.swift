@@ -11,25 +11,29 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
     
-    //Change from using Core Data to storing data on two files
+    //scoreStore for the whole application
+    var scoreStore : ScoreFileStore!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
+    }
  
     
-    //scoreStore for the whole application
-    var scoreStore : ScoreStore!
     
     //passes the store to the table or to the tap simon says controller
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "scores" {
-            let topTenViewController = segue.destinationViewController as!
+            let topTenViewController = segue.destination as!
                 ScoreTabBarController
             topTenViewController.scoreStore = scoreStore
         }
         else if segue.identifier == "Tap" {
-            let tapSimonSaysViewController = segue.destinationViewController as! TapSimonSaysViewController
+            let tapSimonSaysViewController = segue.destination as! TapSimonSaysViewController
             tapSimonSaysViewController.scoreStore = scoreStore
         }
         else if segue.identifier == "Swipe"{
-            let swipeSimonSaysViewController = segue.destinationViewController as! SwipeSimonSaysViewController
+            let swipeSimonSaysViewController = segue.destination as! SwipeSimonSaysViewController
             swipeSimonSaysViewController.scoreStore = scoreStore
         }
         

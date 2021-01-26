@@ -11,6 +11,6 @@ import UIKit
 
 class ScoreTabBarController: UITabBarController{
     
-    var scoreStore: ScoreStore!
+    var scoreStore: ScoreFileStore!
     
 }

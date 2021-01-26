@@ -21,7 +21,7 @@ class FinalScoreSwipeViewController: UIViewController, UITextFieldDelegate {
     var score: Int!
     
     //scoreStore shared within the application
-    var scoreStore : ScoreStore!
+    var scoreStore : ScoreFileStore!
     
     //Dismiss keyboard by tapping the background
     @IBAction func backgroundTapped(sender: AnyObject) {

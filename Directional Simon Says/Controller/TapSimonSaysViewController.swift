@@ -30,7 +30,7 @@ class TapSimonSaysViewController: UIViewController {
     @IBOutlet weak var gameOver: UIButton!
    
     //scoreStore shared within the application
-    var scoreStore: ScoreStore!
+    var scoreStore: ScoreFileStore!
     
     //creates a simon says object
     let simonSays = SimonSays()

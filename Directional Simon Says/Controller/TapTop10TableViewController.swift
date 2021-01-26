@@ -12,7 +12,7 @@ import UIKit
 class TapTop10TableViewController: UITableViewController {
     
     //Score Store object
-    var scoreStore: ScoreStore!
+    var scoreStore: ScoreFileStore!
     var scoresCount: Int = 0
     
     //Only shows the top 10 scores

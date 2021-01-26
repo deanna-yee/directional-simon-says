@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F72C05A11E00F54800F2AC7A /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C05A01E00F54800F2AC7A /* ScoreStore.swift */; };
+		F72C05A11E00F54800F2AC7A /* ScoreFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C05A01E00F54800F2AC7A /* ScoreFileStore.swift */; };
 		F72C05A31E00F78F00F2AC7A /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C05A21E00F78F00F2AC7A /* Score.swift */; };
 		F72C05A51E010CE300F2AC7A /* FinalScoreTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C05A41E010CE300F2AC7A /* FinalScoreTapViewController.swift */; };
 		F7703CA81DFCCC4200618AEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7703CA71DFCCC4200618AEB /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F72C05A01E00F54800F2AC7A /* ScoreStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
+		F72C05A01E00F54800F2AC7A /* ScoreFileStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreFileStore.swift; sourceTree = "<group>"; };
 		F72C05A21E00F78F00F2AC7A /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		F72C05A41E010CE300F2AC7A /* FinalScoreTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalScoreTapViewController.swift; sourceTree = "<group>"; };
 		F7703CA71DFCCC4200618AEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +57,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7E3B80425BFE73C004F2566 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7703CB41DFF5B9000618AEB /* SimonSays.swift */,
+				F72C05A01E00F54800F2AC7A /* ScoreFileStore.swift */,
+				F72C05A21E00F78F00F2AC7A /* Score.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F7E3B80525BFE745004F2566 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7D884751E020CDB0078D502 /* ScoreCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F7E3B80625BFE74E004F2566 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8847D1E0320950078D502 /* ScoreTabBarController.swift */,
+				F7703CA91DFCDAD000618AEB /* TapSimonSaysViewController.swift */,
+				F7D8847F1E0328B40078D502 /* MainMenuViewController.swift */,
+				F7703CAF1DFCDB4D00618AEB /* TapTop10TableViewController.swift */,
+				F7D884771E031C860078D502 /* FinalScoreSwipeViewController copy.swift */,
+				F7D884781E031C860078D502 /* SwipeSimonSaysViewController copy.swift */,
+				F72C05A41E010CE300F2AC7A /* FinalScoreTapViewController.swift */,
+				F7D884791E031C860078D502 /* SwipeTop10TableViewController copy.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F7ECCFF41DFB6E4F009006F1 = {
 			isa = PBXGroup;
 			children = (
@@ -76,18 +109,9 @@
 		F7ECCFFF1DFB6E4F009006F1 /* Directional Simon Says */ = {
 			isa = PBXGroup;
 			children = (
-				F72C05A21E00F78F00F2AC7A /* Score.swift */,
-				F72C05A01E00F54800F2AC7A /* ScoreStore.swift */,
-				F7D884751E020CDB0078D502 /* ScoreCell.swift */,
-				F7D8847F1E0328B40078D502 /* MainMenuViewController.swift */,
-				F7703CA91DFCDAD000618AEB /* TapSimonSaysViewController.swift */,
-				F7703CAF1DFCDB4D00618AEB /* TapTop10TableViewController.swift */,
-				F7D884771E031C860078D502 /* FinalScoreSwipeViewController copy.swift */,
-				F7D884781E031C860078D502 /* SwipeSimonSaysViewController copy.swift */,
-				F7D884791E031C860078D502 /* SwipeTop10TableViewController copy.swift */,
-				F72C05A41E010CE300F2AC7A /* FinalScoreTapViewController.swift */,
-				F7703CB41DFF5B9000618AEB /* SimonSays.swift */,
-				F7D8847D1E0320950078D502 /* ScoreTabBarController.swift */,
+				F7E3B80525BFE745004F2566 /* View */,
+				F7E3B80625BFE74E004F2566 /* Controller */,
+				F7E3B80425BFE73C004F2566 /* Model */,
 				F7ECD0001DFB6E4F009006F1 /* AppDelegate.swift */,
 				F7ECD0041DFB6E4F009006F1 /* Main.storyboard */,
 				F7703CA71DFCCC4200618AEB /* Assets.xcassets */,
@@ -138,6 +162,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -169,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72C05A11E00F54800F2AC7A /* ScoreStore.swift in Sources */,
+				F72C05A11E00F54800F2AC7A /* ScoreFileStore.swift in Sources */,
 				F7D8847C1E031C860078D502 /* SwipeTop10TableViewController copy.swift in Sources */,
 				F72C05A51E010CE300F2AC7A /* FinalScoreTapViewController.swift in Sources */,
 				F7D884801E0328B40078D502 /* MainMenuViewController.swift in Sources */,

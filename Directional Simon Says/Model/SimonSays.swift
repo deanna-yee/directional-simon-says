@@ -11,9 +11,9 @@ import Foundation
 //The different directions
 enum Direction: Int{
     case Up = 0
-    case Right = 1
-    case Down = 2
-    case Left = 3
+    case Right
+    case Down
+    case Left
     
     //returns the count of cases in Direction
     static let count: Int = Direction.Left.rawValue + 1
@@ -56,7 +56,7 @@ class SimonSays {
     
     //checks the pattern
     func checkPattern(player: Direction){
-        if checkCurrentPatternPosition(player) == true {
+        if checkCurrentPatternPosition(player: player) == true {
             if (patternIndex == (patternAmount - 1)) {
                 incrementScoreAndPattern()
                 endOfPattern()
@@ -73,10 +73,12 @@ class SimonSays {
     
     //creates the pattern that will be shown
     func createPattern(){
-        var random: Int = 0
+        
         for _ in 0..<patternAmount{
-            random = Int(arc4random_uniform(UInt32(Direction.count)))
-            pattern.append(Direction(rawValue: random)!)
+            let randomDir = Int.random(in: 0..<Direction.count)
+            if let direction = Direction(rawValue: randomDir){
+                pattern.append(direction)
+            }
         }
     }
     
