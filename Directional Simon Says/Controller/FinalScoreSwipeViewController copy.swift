@@ -9,7 +9,7 @@
 //import Foundation
 import UIKit
 
-class FinalScoreSwipeViewController: UIViewController, UITextFieldDelegate {
+/*class FinalScoreSwipeViewController: UIViewController, UITextFieldDelegate {
    
     //shows the score they got on the screen
     @IBOutlet weak var scoreLabel: UILabel!
@@ -72,4 +72,4 @@ class FinalScoreSwipeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         scoreLabel.text = "Score: \(score)"
     }
-}
+}*/

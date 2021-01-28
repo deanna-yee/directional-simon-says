@@ -9,14 +9,13 @@
 //import Foundation
 import UIKit
 
-class TapTop10TableViewController: UITableViewController {
-    
+class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Score Store object
     var scoreStore: ScoreFileStore!
     var scoresCount: Int = 0
     
     //Only shows the top 10 scores
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if scoreStore.topTenTapScores.count < 10{
             scoresCount = scoreStore.topTenTapScores.count
         }
@@ -27,27 +26,26 @@ class TapTop10TableViewController: UITableViewController {
     }
     
     //Displays the scores into the table
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Create an instance of UITableViewCell, with default appearance
-        //let cell = tableView.dequeueReusableCellWithIdentifier("ScoreCell", forIndexPath: indexPath) as! ScoreCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("ScoreCell", forIndexPath: indexPath) as! ScoreCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCell", for: indexPath) as! ScoreCell
+            
         //Set the text on the cell with the description of the item
         //That is at the nth index of items, where n = row this cell
         //well appear in on the tableview
-        if scoreStore.topTenTapScores.count != 0 {
-            let score = scoreStore.topTenTapScores[indexPath.row]
-            cell.nameLabel.text = score.name
-            cell.rankLabel.text = "\(score.rank)"
-            cell.scoreLabel.text = "\(score.score)"
-        }
+        let score = scoreStore.topTenTapScores[indexPath.row]
+        cell.updateCell(score: score)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     //passes the score store back to the main menu
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Main" {
-            let mainViewController = segue.destinationViewController as! MainMenuViewController
+            let mainViewController = segue.destination as! MainMenuViewController
             mainViewController.scoreStore = scoreStore
         }
         
@@ -61,14 +59,6 @@ class TapTop10TableViewController: UITableViewController {
             let tbvc = self.tabBarController as! ScoreTabBarController
             scoreStore = tbvc.scoreStore
         }
-        
-        let height = UIApplication.sharedApplication().statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
-        
-        tableView.rowHeight = 60
     }
     
 }

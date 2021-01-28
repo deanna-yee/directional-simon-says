@@ -9,7 +9,7 @@
 //import Foundation
 import UIKit
 
-class FinalScoreTapViewController: UIViewController, UITextFieldDelegate {
+class FinalScoreViewController: UIViewController, UITextFieldDelegate {
    
     //shows the score they got on the screen
     @IBOutlet weak var scoreLabel: UILabel!
@@ -31,45 +31,48 @@ class FinalScoreTapViewController: UIViewController, UITextFieldDelegate {
 
     //Gets the name from the UITextField
     @IBAction func getName(sender: UITextField) {
-        if let text = sender.text where !text.isEmpty {
+        if let text = sender.text, !text.isEmpty {
             name = text
         }
     }
     
     //Dismiss keyboard by hitting return
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     //adds the score to the array
     func addScore(){
-        scoreStore.createTapScore(name, scoreInt: score)
+        scoreStore.createTapScore(name: name, scoreInt: score)
     }
     
     //Adds the score to the array and goes to the table view of the top ten
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare( for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Done" {
             if name != nil{
                 addScore()
             }
-            let topTenTapViewController = segue.destinationViewController as! TapTop10TableViewController
+            let topTenTapViewController = segue.destination as! Top10TableViewController
             topTenTapViewController.scoreStore = scoreStore
         } else if segue.identifier == "Cancel" {
-            let mainMenuViewController = segue.destinationViewController as! MainMenuViewController
+            let mainMenuViewController = segue.destination as! MainMenuViewController
             mainMenuViewController.scoreStore = scoreStore
         }
         
     }
     
     //dismiss keyboard when cancel or done is pressed
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         view.endEditing(true)
     }
     
     //displays the score
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreLabel.text = "Score: \(score)"
+        if let score = score{
+            scoreLabel.text = "Score: \(score)"
+        }
+       
     }
 }

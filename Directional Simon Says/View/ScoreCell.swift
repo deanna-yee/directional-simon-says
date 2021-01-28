@@ -19,4 +19,10 @@ class ScoreCell: UITableViewCell {
     
     //displays the rank of the person
     @IBOutlet var rankLabel: UILabel!
+    
+    func updateCell(score: Score){
+        nameLabel.text = score.name
+        rankLabel.text = "\(score.rank)"
+        scoreLabel.text = "\(score.score)"
+    }
 }

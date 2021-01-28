@@ -16,7 +16,6 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
     }
  
     
@@ -28,14 +27,16 @@ class MainMenuViewController: UIViewController {
                 ScoreTabBarController
             topTenViewController.scoreStore = scoreStore
         }
-        else if segue.identifier == "Tap" {
-            let tapSimonSaysViewController = segue.destination as! TapSimonSaysViewController
-            tapSimonSaysViewController.scoreStore = scoreStore
+        else if segue.identifier == "Tap" || segue.identifier == "Swipe"{
+            let simonSaysViewController = segue.destination as! SimonSaysViewController
+            simonSaysViewController.scoreStore = scoreStore
+            if segue.identifier == "Tap"{
+                simonSaysViewController.gameType = "Tap"
+            }else{
+                simonSaysViewController.gameType = "Swipe"
+            }
         }
-        else if segue.identifier == "Swipe"{
-            let swipeSimonSaysViewController = segue.destination as! SwipeSimonSaysViewController
-            swipeSimonSaysViewController.scoreStore = scoreStore
-        }
+       
         
         
         
