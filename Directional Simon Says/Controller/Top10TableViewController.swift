@@ -11,7 +11,7 @@ import UIKit
 
 class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Score Store object
-    var scoreStore: ScoreFileStore!
+    var scoreStore: ScoreStore!
     var scoresCount: Int = 0
     
     //Only shows the top 10 scores

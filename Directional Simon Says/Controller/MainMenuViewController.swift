@@ -12,7 +12,7 @@ import UIKit
 class MainMenuViewController: UIViewController {
     
     //scoreStore for the whole application
-    var scoreStore : ScoreFileStore!
+    var scoreStore : ScoreStore!
     
     override func viewDidLoad() {
         super.viewDidLoad()

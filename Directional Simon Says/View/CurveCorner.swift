@@ -1,5 +1,5 @@
 //
-//  MenuButton.swift
+//  CurveCorner.swift
 //  Directional Simon Says
 //
 //  Created by Deanna Yee on 1/26/21.
@@ -9,7 +9,8 @@
 import UIKit
 
 @IBDesignable
-class CurveCornerButton: UIButton {
+class CurveCorner: UIButton {
+    @IBInspectable var cornerRadius: CGFloat = 10.0
     override func prepareForInterfaceBuilder() {
         customizeView()
     }
@@ -21,7 +22,7 @@ class CurveCornerButton: UIButton {
     
     func customizeView(){
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.25)
-        layer.cornerRadius = 10.0
+        layer.cornerRadius = cornerRadius
         layer.borderWidth = 5.0
         layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }

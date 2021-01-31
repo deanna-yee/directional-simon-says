@@ -187,7 +187,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="So0-mp-ILg" customClass="CurveCorner" customModule="Directional_Simon_Says" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="101" width="250" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="P9T-cE-7Ne"/>
+                                            <constraint firstAttribute="width" constant="250" id="P9T-cE-7Ne"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Swipe Simon Says">
@@ -251,8 +251,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXf-W5-epl">
                                 <rect key="frame" x="132" y="647" width="150" height="150"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="kts-zS-GLl"/>
                                     <constraint firstAttribute="height" constant="150" id="nGe-KP-fgF"/>
-                                    <constraint firstAttribute="width" secondItem="lXf-W5-epl" secondAttribute="height" multiplier="1:1" id="w2K-YT-pPI"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="down arrow"/>
                                 <connections>
@@ -263,7 +263,7 @@
                                 <rect key="frame" x="132" y="99" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="ead-be-3cO"/>
-                                    <constraint firstAttribute="width" secondItem="xGV-OJ-eXs" secondAttribute="height" multiplier="1:1" id="ycW-w3-SI5"/>
+                                    <constraint firstAttribute="width" constant="150" id="mjo-2O-o0Z"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="up arrow"/>
                                 <connections>
@@ -274,7 +274,7 @@
                                 <rect key="frame" x="20" y="373" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="4yF-yj-ChT"/>
-                                    <constraint firstAttribute="width" secondItem="5hg-3w-ZTr" secondAttribute="height" multiplier="1:1" id="ecX-jd-tRc"/>
+                                    <constraint firstAttribute="width" constant="150" id="cuS-BC-45c"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="left arrow"/>
                                 <connections>
@@ -284,7 +284,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7m0-RY-9vV">
                                 <rect key="frame" x="244" y="373" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="7m0-RY-9vV" secondAttribute="height" multiplier="1:1" id="Q9R-aV-EN2"/>
+                                    <constraint firstAttribute="width" constant="150" id="emO-05-s9z"/>
                                     <constraint firstAttribute="height" constant="150" id="qID-h2-W7c"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="right arrow"/>
@@ -299,10 +299,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hf-ke-Ux0" customClass="CurveCorner" customModule="Directional_Simon_Says" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="67" height="48"/>
+                                <rect key="frame" x="20" y="44" width="62" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Start">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -323,7 +323,7 @@
                                 <rect key="frame" x="123.5" y="427.5" width="167" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Tap To Continue">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -340,11 +340,9 @@
                         <constraints>
                             <constraint firstItem="neM-P2-IA0" firstAttribute="top" secondItem="nDa-jp-ydc" secondAttribute="bottom" id="21t-OT-Sew"/>
                             <constraint firstItem="xGV-OJ-eXs" firstAttribute="centerX" secondItem="B8k-Yd-BvS" secondAttribute="centerX" id="8sm-p0-1jN"/>
-                            <constraint firstItem="7m0-RY-9vV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5hg-3w-ZTr" secondAttribute="trailing" constant="74" id="CcQ-wb-ikV"/>
                             <constraint firstItem="ya5-G0-19D" firstAttribute="top" secondItem="lXf-W5-epl" secondAttribute="bottom" constant="65" id="DPw-cM-qcE"/>
                             <constraint firstItem="5hg-3w-ZTr" firstAttribute="leading" secondItem="B8k-Yd-BvS" secondAttribute="leadingMargin" id="Dbh-F5-Gnx"/>
                             <constraint firstItem="7m0-RY-9vV" firstAttribute="centerY" secondItem="B8k-Yd-BvS" secondAttribute="centerY" id="Ec9-IB-U8f"/>
-                            <constraint firstItem="N0n-sv-dbl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8Hf-ke-Ux0" secondAttribute="trailing" constant="80" id="OIs-Pb-GDS"/>
                             <constraint firstItem="8Hf-ke-Ux0" firstAttribute="leading" secondItem="B8k-Yd-BvS" secondAttribute="leadingMargin" id="UKq-I4-qMD"/>
                             <constraint firstItem="N0n-sv-dbl" firstAttribute="centerX" secondItem="B8k-Yd-BvS" secondAttribute="centerX" id="Ubt-JF-MfY"/>
                             <constraint firstItem="lXf-W5-epl" firstAttribute="centerX" secondItem="B8k-Yd-BvS" secondAttribute="centerX" id="Y1S-Dx-sU4"/>
@@ -355,7 +353,6 @@
                             <constraint firstItem="dFJ-ye-EFF" firstAttribute="centerY" secondItem="B8k-Yd-BvS" secondAttribute="centerY" id="l4A-ut-I5U"/>
                             <constraint firstItem="N0n-sv-dbl" firstAttribute="top" secondItem="nDa-jp-ydc" secondAttribute="bottom" id="pVV-kD-lnn"/>
                             <constraint firstItem="xGV-OJ-eXs" firstAttribute="top" secondItem="nDa-jp-ydc" secondAttribute="bottom" constant="55" id="raa-pt-UVb"/>
-                            <constraint firstItem="neM-P2-IA0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N0n-sv-dbl" secondAttribute="trailing" constant="74" id="s9S-U9-f6y"/>
                             <constraint firstItem="7m0-RY-9vV" firstAttribute="trailing" secondItem="B8k-Yd-BvS" secondAttribute="trailingMargin" id="x5f-pu-XX5"/>
                         </constraints>
                     </view>
@@ -446,31 +443,11 @@
             <point key="canvasLocation" x="-477" y="-2440"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="8Hf-ke-Ux0">
-            <size key="intrinsicContentSize" width="62" height="48"/>
-        </designable>
-        <designable name="Eg0-AP-BN6">
-            <size key="intrinsicContentSize" width="63" height="42"/>
-        </designable>
-        <designable name="So0-mp-ILg">
-            <size key="intrinsicContentSize" width="198" height="42"/>
-        </designable>
-        <designable name="WaP-j3-PSe">
-            <size key="intrinsicContentSize" width="171" height="42"/>
-        </designable>
-        <designable name="dFJ-ye-EFF">
-            <size key="intrinsicContentSize" width="167" height="41"/>
-        </designable>
-    </designables>
     <resources>
         <image name="down arrow" width="150" height="150"/>
         <image name="left arrow" width="150" height="149"/>
         <image name="right arrow" width="150" height="150"/>
         <image name="up arrow" width="150" height="150"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
