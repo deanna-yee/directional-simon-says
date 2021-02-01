@@ -31,6 +31,7 @@ class SimonSaysViewController: UIViewController {
     //scoreStore shared within the application
     var scoreStore: ScoreStore!
     var gameType: String!
+    var colors = [UIColor.green, UIColor.purple, UIColor.red, UIColor.blue]
     
     //creates a simon says object
     let simonSays = SimonSays()
@@ -57,6 +58,8 @@ class SimonSaysViewController: UIViewController {
             self.status.text = "Game Over"
             hideShowButtons(hidden: true, alpha: 0.0)
             self.gameOver.isHidden = false
+        }else if !simonSays.yourTurn{
+            displayPattern()
         }
         
     }
@@ -77,14 +80,31 @@ class SimonSaysViewController: UIViewController {
     }
     
     //causes the arrows to blink
-    func blink(delay: Double, duration:Double, button: UIButton){
+    func blink(delay: Int, duration:Double, button: UIButton){
         button.isHidden = false
-        UIView.animate(withDuration: duration){
-            button.alpha = 1.0
+        button.alpha = 0.0
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)){
+            UIView.animate(withDuration: duration){
+                button.alpha = 1.0
+                button.backgroundColor = self.colors[button.tag]
+            }
         }
-        _ = Timer.init(timeInterval: delay, repeats: false){_ in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)){
             UIView.animate(withDuration: duration){
                 button.alpha = 0.0
+                button.backgroundColor = UIColor.clear
+            }
+        }
+    }
+    func blinkColor(delay: Int, duration: Double, button: UIButton){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)){
+            UIView.animate(withDuration: duration){
+                button.backgroundColor = self.colors[button.tag]
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)){
+            UIView.animate(withDuration: duration){
+                button.backgroundColor = UIColor.clear
             }
         }
     }
@@ -92,41 +112,43 @@ class SimonSaysViewController: UIViewController {
     //goes through the array and shows the pattern
     func showPattern(){
         simonSays.createPattern()
-        var patternIndex = 0
-        _ = Timer.init(timeInterval: 1.0, repeats: true){ timer in
-            self.getPattern(current: patternIndex)
-            if patternIndex == self.simonSays.patternAmount - 1{
-                self.simonSays.yourTurn = true
-                self.showAllArrowButtons()
-                timer.invalidate()
-            }else{
-                patternIndex += 1
+        for i in 0..<simonSays.patternAmount{
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(i)){
+                self.getPattern(current: self.simonSays.pattern[i].rawValue)
             }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(simonSays.patternAmount + 1)){
+            self.simonSays.yourTurn = true
+            self.showAllArrowButtons()
+
         }
     }
     
     //determines whether the arrow is hidden or not
-    func getPattern(current index: Int){
-        for i in 0...Direction.count{
-            if i != index{
+    func getPattern(current direction: Int){
+        for i in 0..<Direction.count{
+            if i != direction{
                 directionButtons[i].isHidden = true
             }else{
-                blink(delay: 0.5, duration: 0.1, button: directionButtons[i])
+                blink(delay: 500, duration: 1, button: directionButtons[i])
             }
         }
     }
 
     //starts the game of simon says
-    @IBAction func start(sender: AnyObject) {
+    @IBAction func start(sender: UIButton) {
         simonSays.score = 0
         displayPattern()
     }
     
     //checks to see if the button pressed is the correct button to press
-    @IBAction func pressDirection(sender: AnyObject) {
-        if let direction = Direction.init(rawValue: sender.tag){
-            simonSays.checkPattern(player: direction)
-            checkStatus()
+    @IBAction func pressDirection(sender: UIButton) {
+        blinkColor(delay: 50, duration: 0.5, button: sender)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)){
+            if let direction = Direction.init(rawValue: sender.tag){
+                self.simonSays.checkPattern(player: direction)
+                self.checkStatus()
+            }
         }
     }
     
@@ -147,5 +169,6 @@ class SimonSaysViewController: UIViewController {
         super.viewDidLoad()
         status.isHidden = true
         gameOver.isHidden = true
+        enableOrDisableButtons(enable: false)
     }
 }

@@ -16,32 +16,24 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scoreStore.updateScoresLists()
     }
  
-    
-    
     //passes the store to the table or to the tap simon says controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "scores" {
             let topTenViewController = segue.destination as!
-                ScoreTabBarController
+                Top10TableViewController
             topTenViewController.scoreStore = scoreStore
         }
-        else if segue.identifier == "Tap" || segue.identifier == "Swipe"{
+        else if segue.identifier == "tap" || segue.identifier == "swipe"{
             let simonSaysViewController = segue.destination as! SimonSaysViewController
             simonSaysViewController.scoreStore = scoreStore
-            if segue.identifier == "Tap"{
-                simonSaysViewController.gameType = "Tap"
-            }else{
-                simonSaysViewController.gameType = "Swipe"
-            }
+            simonSaysViewController.gameType = segue.identifier
         }
-       
-        
-        
-        
     }
     
-    
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+    }
     
 }

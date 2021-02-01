@@ -36,6 +36,10 @@ class FinalScoreViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func goToMain(sender: UIBarButtonItem){
+        performSegue(withIdentifier: "gotoMain", sender: self)
+    }
+    
     //Dismiss keyboard by hitting return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -55,7 +59,7 @@ class FinalScoreViewController: UIViewController, UITextFieldDelegate {
             }
             let topTenTapViewController = segue.destination as! Top10TableViewController
             topTenTapViewController.scoreStore = scoreStore
-        } else if segue.identifier == "Cancel" {
+        } else if segue.identifier == "gotoMain" {
             let mainMenuViewController = segue.destination as! MainMenuViewController
             mainMenuViewController.scoreStore = scoreStore
         }

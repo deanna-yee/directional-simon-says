@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F74F0DF025C7B7EB0004C216 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74F0DEF25C7B7EB0004C216 /* Score+CoreDataProperties.swift */; };
 		F7BF895925C682EB00E94727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BF895525C682EB00E94727 /* LaunchScreen.storyboard */; };
 		F7BF895A25C682EB00E94727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BF895725C682EB00E94727 /* Main.storyboard */; };
 		F7BF897325C6844400E94727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BF895C25C6844400E94727 /* Assets.xcassets */; };
 		F7BF897425C6844400E94727 /* Top10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF895E25C6844400E94727 /* Top10TableViewController.swift */; };
 		F7BF897525C6844400E94727 /* SwipeSimonSaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF895F25C6844400E94727 /* SwipeSimonSaysViewController.swift */; };
 		F7BF897625C6844400E94727 /* FinalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896025C6844400E94727 /* FinalScoreViewController.swift */; };
-		F7BF897725C6844400E94727 /* ScoreTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896125C6844400E94727 /* ScoreTabBarController.swift */; };
 		F7BF897825C6844400E94727 /* SimonSaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896225C6844400E94727 /* SimonSaysViewController.swift */; };
 		F7BF897925C6844400E94727 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896325C6844400E94727 /* MainMenuViewController.swift */; };
-		F7BF897A25C6844400E94727 /* SwipeTop10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896425C6844400E94727 /* SwipeTop10TableViewController.swift */; };
-		F7BF897B25C6844400E94727 /* FinalScoreSwipeViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896525C6844400E94727 /* FinalScoreSwipeViewController copy.swift */; };
 		F7BF897C25C6844400E94727 /* SimonSays.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896625C6844400E94727 /* SimonSays.xcdatamodeld */; };
 		F7BF897D25C6844400E94727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896825C6844400E94727 /* AppDelegate.swift */; };
 		F7BF897E25C6844400E94727 /* CurveCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896A25C6844400E94727 /* CurveCorner.swift */; };
@@ -25,23 +23,21 @@
 		F7BF898025C6844400E94727 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896C25C6844400E94727 /* SceneDelegate.swift */; };
 		F7BF898225C6844400E94727 /* SimonSays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF896F25C6844400E94727 /* SimonSays.swift */; };
 		F7BF898325C6844400E94727 /* Score+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF897025C6844400E94727 /* Score+CoreDataClass.swift */; };
-		F7BF898425C6844400E94727 /* ScoreFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF897125C6844400E94727 /* ScoreFileStore.swift */; };
-		F7BF898525C6844400E94727 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF897225C6844400E94727 /* Score+CoreDataProperties.swift */; };
+		F7BF898425C6844400E94727 /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF897125C6844400E94727 /* ScoreStore.swift */; };
+		F7C4898C25C73B6D0050F49C /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C4898B25C73B6D0050F49C /* InstructionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F7364D3525C67B40006523B8 /* Directional Simon Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Directional Simon Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F74F0DEF25C7B7EB0004C216 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F7BF895625C682EB00E94727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7BF895825C682EB00E94727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7BF895C25C6844400E94727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7BF895E25C6844400E94727 /* Top10TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top10TableViewController.swift; sourceTree = "<group>"; };
 		F7BF895F25C6844400E94727 /* SwipeSimonSaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeSimonSaysViewController.swift; sourceTree = "<group>"; };
 		F7BF896025C6844400E94727 /* FinalScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalScoreViewController.swift; sourceTree = "<group>"; };
-		F7BF896125C6844400E94727 /* ScoreTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTabBarController.swift; sourceTree = "<group>"; };
 		F7BF896225C6844400E94727 /* SimonSaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimonSaysViewController.swift; sourceTree = "<group>"; };
 		F7BF896325C6844400E94727 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		F7BF896425C6844400E94727 /* SwipeTop10TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTop10TableViewController.swift; sourceTree = "<group>"; };
-		F7BF896525C6844400E94727 /* FinalScoreSwipeViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FinalScoreSwipeViewController copy.swift"; sourceTree = "<group>"; };
 		F7BF896725C6844400E94727 /* SimonSays.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimonSays.xcdatamodel; sourceTree = "<group>"; };
 		F7BF896825C6844400E94727 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7BF896A25C6844400E94727 /* CurveCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveCorner.swift; sourceTree = "<group>"; };
@@ -50,8 +46,8 @@
 		F7BF896D25C6844400E94727 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7BF896F25C6844400E94727 /* SimonSays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimonSays.swift; sourceTree = "<group>"; };
 		F7BF897025C6844400E94727 /* Score+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F7BF897125C6844400E94727 /* ScoreFileStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreFileStore.swift; sourceTree = "<group>"; };
-		F7BF897225C6844400E94727 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F7BF897125C6844400E94727 /* ScoreStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
+		F7C4898B25C73B6D0050F49C /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,14 +80,14 @@
 		F7364D3725C67B40006523B8 /* Directional Simon Says */ = {
 			isa = PBXGroup;
 			children = (
+				F7BF896E25C6844400E94727 /* Model */,
+				F7BF896925C6844400E94727 /* View */,
+				F7BF895D25C6844400E94727 /* Controller */,
 				F7BF896825C6844400E94727 /* AppDelegate.swift */,
 				F7BF895C25C6844400E94727 /* Assets.xcassets */,
-				F7BF895D25C6844400E94727 /* Controller */,
 				F7BF896D25C6844400E94727 /* Info.plist */,
-				F7BF896E25C6844400E94727 /* Model */,
 				F7BF896C25C6844400E94727 /* SceneDelegate.swift */,
 				F7BF896625C6844400E94727 /* SimonSays.xcdatamodeld */,
-				F7BF896925C6844400E94727 /* View */,
 				F7BF895525C682EB00E94727 /* LaunchScreen.storyboard */,
 				F7BF895725C682EB00E94727 /* Main.storyboard */,
 			);
@@ -104,11 +100,9 @@
 				F7BF895E25C6844400E94727 /* Top10TableViewController.swift */,
 				F7BF895F25C6844400E94727 /* SwipeSimonSaysViewController.swift */,
 				F7BF896025C6844400E94727 /* FinalScoreViewController.swift */,
-				F7BF896125C6844400E94727 /* ScoreTabBarController.swift */,
 				F7BF896225C6844400E94727 /* SimonSaysViewController.swift */,
 				F7BF896325C6844400E94727 /* MainMenuViewController.swift */,
-				F7BF896425C6844400E94727 /* SwipeTop10TableViewController.swift */,
-				F7BF896525C6844400E94727 /* FinalScoreSwipeViewController copy.swift */,
+				F7C4898B25C73B6D0050F49C /* InstructionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -125,10 +119,10 @@
 		F7BF896E25C6844400E94727 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F74F0DEF25C7B7EB0004C216 /* Score+CoreDataProperties.swift */,
 				F7BF896F25C6844400E94727 /* SimonSays.swift */,
 				F7BF897025C6844400E94727 /* Score+CoreDataClass.swift */,
-				F7BF897125C6844400E94727 /* ScoreFileStore.swift */,
-				F7BF897225C6844400E94727 /* Score+CoreDataProperties.swift */,
+				F7BF897125C6844400E94727 /* ScoreStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,22 +198,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C4898C25C73B6D0050F49C /* InstructionViewController.swift in Sources */,
 				F7BF897925C6844400E94727 /* MainMenuViewController.swift in Sources */,
 				F7BF897525C6844400E94727 /* SwipeSimonSaysViewController.swift in Sources */,
 				F7BF898225C6844400E94727 /* SimonSays.swift in Sources */,
 				F7BF898325C6844400E94727 /* Score+CoreDataClass.swift in Sources */,
-				F7BF897A25C6844400E94727 /* SwipeTop10TableViewController.swift in Sources */,
-				F7BF898525C6844400E94727 /* Score+CoreDataProperties.swift in Sources */,
-				F7BF897B25C6844400E94727 /* FinalScoreSwipeViewController copy.swift in Sources */,
 				F7BF897825C6844400E94727 /* SimonSaysViewController.swift in Sources */,
 				F7BF897C25C6844400E94727 /* SimonSays.xcdatamodeld in Sources */,
-				F7BF898425C6844400E94727 /* ScoreFileStore.swift in Sources */,
+				F7BF898425C6844400E94727 /* ScoreStore.swift in Sources */,
 				F7BF897625C6844400E94727 /* FinalScoreViewController.swift in Sources */,
-				F7BF897725C6844400E94727 /* ScoreTabBarController.swift in Sources */,
 				F7BF898025C6844400E94727 /* SceneDelegate.swift in Sources */,
 				F7BF897D25C6844400E94727 /* AppDelegate.swift in Sources */,
 				F7BF897E25C6844400E94727 /* CurveCorner.swift in Sources */,
 				F7BF897F25C6844400E94727 /* ScoreCell.swift in Sources */,
+				F74F0DF025C7B7EB0004C216 /* Score+CoreDataProperties.swift in Sources */,
 				F7BF897425C6844400E94727 /* Top10TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

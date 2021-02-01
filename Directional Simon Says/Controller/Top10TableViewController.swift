@@ -14,10 +14,14 @@ class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableV
     var scoreStore: ScoreStore!
     var scoresCount: Int = 0
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var selectionControl: UISegmentedControl!
+    
     //Only shows the top 10 scores
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if scoreStore.topTenTapScores.count < 10{
-            scoresCount = scoreStore.topTenTapScores.count
+        if scoreStore.selectedScores.count < 10{
+            scoresCount = scoreStore.selectedScores.count
         }
         else{
             scoresCount = 10
@@ -44,7 +48,7 @@ class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableV
     
     //passes the score store back to the main menu
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Main" {
+        if segue.identifier == "gotoMain" {
             let mainViewController = segue.destination as! MainMenuViewController
             mainViewController.scoreStore = scoreStore
         }
@@ -55,10 +59,18 @@ class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableV
     //Allows for scrolling and makes the row height to be 60
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.tabBarController != nil{
-            let tbvc = self.tabBarController as! ScoreTabBarController
-            scoreStore = tbvc.scoreStore
-        }
+        scoreStore.chooseList(selected: selectionControl.selectedSegmentIndex)
+        tableView.reloadData()
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    @IBAction func chooseSelection(_ sender: UISegmentedControl) {
+        scoreStore.chooseList(selected: selectionControl.selectedSegmentIndex)
+        tableView.reloadData()
+    }
+    @IBAction func goToMain(sender: UIBarButtonItem){
+        performSegue(withIdentifier: "gotoMain", sender: self)
     }
     
 }

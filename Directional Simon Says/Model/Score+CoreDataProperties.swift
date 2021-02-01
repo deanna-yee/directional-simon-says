@@ -2,8 +2,7 @@
 //  Score+CoreDataProperties.swift
 //  Directional Simon Says
 //
-//  Created by Deanna Yee on 1/30/21.
-//  Copyright © 2021 cisstudent. All rights reserved.
+//  Created by Deanna Yee on 1/31/21.
 //
 //
 
@@ -20,6 +19,7 @@ extension Score {
     @NSManaged public var name: String?
     @NSManaged public var rank: Int16
     @NSManaged public var score: Int64
+    @NSManaged public var gameType: String?
 
 }
 
