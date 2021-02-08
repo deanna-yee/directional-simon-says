@@ -138,7 +138,6 @@ class ScoreStore {
             (scoreResult) in
             switch scoreResult {
                 case let .success(scores):
-                    print(scores)
                     for score in scores{
                         if score.gameType == "Tap"{
                             self.topTenTapScores.append(score)

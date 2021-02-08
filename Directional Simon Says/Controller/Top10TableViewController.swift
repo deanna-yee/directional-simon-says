@@ -13,6 +13,7 @@ class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableV
     //Score Store object
     var scoreStore: ScoreStore!
     var scoresCount: Int = 0
+    var gameType: String?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,7 +38,7 @@ class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableV
         //Set the text on the cell with the description of the item
         //That is at the nth index of items, where n = row this cell
         //well appear in on the tableview
-        let score = scoreStore.topTenTapScores[indexPath.row]
+        let score = scoreStore.selectedScores[indexPath.row]
         cell.updateCell(score: score)
         return cell
     }
@@ -59,6 +60,9 @@ class Top10TableViewController:  UIViewController, UITableViewDelegate, UITableV
     //Allows for scrolling and makes the row height to be 60
     override func viewDidLoad() {
         super.viewDidLoad()
+        if gameType == "swipe"{
+            selectionControl.selectedSegmentIndex = 1
+        }
         scoreStore.chooseList(selected: selectionControl.selectedSegmentIndex)
         tableView.reloadData()
         tableView.delegate = self

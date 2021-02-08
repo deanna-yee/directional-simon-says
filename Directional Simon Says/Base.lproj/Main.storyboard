@@ -373,6 +373,7 @@
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXf-W5-epl" userLabel="down">
                                 <rect key="frame" x="132" y="647" width="150" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="nGe-KP-fgF"/>
                                     <constraint firstAttribute="width" secondItem="lXf-W5-epl" secondAttribute="height" multiplier="1:1" id="w2K-YT-pPI"/>
@@ -380,10 +381,12 @@
                                 <state key="normal" backgroundImage="down"/>
                                 <connections>
                                     <action selector="pressDirectionWithSender:" destination="paZ-Uf-J2n" eventType="touchUpInside" id="MGN-2h-Mjk"/>
+                                    <outletCollection property="gestureRecognizers" destination="cSH-HO-AdN" appends="YES" id="7Tu-mF-dwH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-OJ-eXs" userLabel="up">
                                 <rect key="frame" x="132" y="99" width="150" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="ead-be-3cO"/>
                                     <constraint firstAttribute="width" secondItem="xGV-OJ-eXs" secondAttribute="height" multiplier="1:1" id="ycW-w3-SI5"/>
@@ -391,10 +394,12 @@
                                 <state key="normal" backgroundImage="up"/>
                                 <connections>
                                     <action selector="pressDirectionWithSender:" destination="paZ-Uf-J2n" eventType="touchUpInside" id="zoQ-f5-iKh"/>
+                                    <outletCollection property="gestureRecognizers" destination="q6h-QC-hbT" appends="YES" id="frk-92-OXv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hg-3w-ZTr" userLabel="left">
                                 <rect key="frame" x="20" y="373" width="150" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="4yF-yj-ChT"/>
                                     <constraint firstAttribute="width" secondItem="5hg-3w-ZTr" secondAttribute="height" multiplier="1:1" id="ecX-jd-tRc"/>
@@ -402,10 +407,12 @@
                                 <state key="normal" backgroundImage="left"/>
                                 <connections>
                                     <action selector="pressDirectionWithSender:" destination="paZ-Uf-J2n" eventType="touchUpInside" id="WmW-fl-uk8"/>
+                                    <outletCollection property="gestureRecognizers" destination="jO8-sl-9OE" appends="YES" id="bbG-D7-DmT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7m0-RY-9vV" userLabel="right">
                                 <rect key="frame" x="244" y="373" width="150" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7m0-RY-9vV" secondAttribute="height" multiplier="1:1" id="Q9R-aV-EN2"/>
                                     <constraint firstAttribute="height" constant="150" id="qID-h2-W7c"/>
@@ -413,6 +420,7 @@
                                 <state key="normal" backgroundImage="right"/>
                                 <connections>
                                     <action selector="pressDirectionWithSender:" destination="paZ-Uf-J2n" eventType="touchUpInside" id="i1G-Yj-g1F"/>
+                                    <outletCollection property="gestureRecognizers" destination="Mln-K0-aTt" appends="YES" id="RGQ-vp-rw3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neM-P2-IA0">
@@ -498,9 +506,33 @@
                         <outletCollection property="directionButtons" destination="7m0-RY-9vV" collectionClass="NSMutableArray" id="B0D-mG-hFt"/>
                         <outletCollection property="directionButtons" destination="lXf-W5-epl" collectionClass="NSMutableArray" id="Iep-7i-GxW"/>
                         <outletCollection property="directionButtons" destination="5hg-3w-ZTr" collectionClass="NSMutableArray" id="9mV-IZ-M8A"/>
+                        <outletCollection property="swipeGestures" destination="q6h-QC-hbT" collectionClass="NSMutableArray" id="keN-nk-lgo"/>
+                        <outletCollection property="swipeGestures" destination="Mln-K0-aTt" collectionClass="NSMutableArray" id="WM5-ve-Ogr"/>
+                        <outletCollection property="swipeGestures" destination="cSH-HO-AdN" collectionClass="NSMutableArray" id="2MI-r0-PYF"/>
+                        <outletCollection property="swipeGestures" destination="jO8-sl-9OE" collectionClass="NSMutableArray" id="Sqf-ER-bcN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmd-gc-pFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="q6h-QC-hbT" userLabel="up swipe">
+                    <connections>
+                        <action selector="swipeDirection:" destination="paZ-Uf-J2n" id="frp-W7-A9g"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Mln-K0-aTt" userLabel="right swipe">
+                    <connections>
+                        <action selector="swipeDirection:" destination="paZ-Uf-J2n" id="S3o-Yh-ihg"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="jO8-sl-9OE" userLabel="left swipe">
+                    <connections>
+                        <action selector="swipeDirection:" destination="paZ-Uf-J2n" id="SfG-4a-OyT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="cSH-HO-AdN" userLabel="down swipe">
+                    <connections>
+                        <action selector="swipeDirection:" destination="paZ-Uf-J2n" id="IzY-mT-6rs"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1090" y="-2460"/>
         </scene>

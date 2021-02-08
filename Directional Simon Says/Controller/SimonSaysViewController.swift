@@ -15,6 +15,7 @@ class SimonSaysViewController: UIViewController {
     
     //shows the button that needs to be tapped when it is your turn
     @IBOutlet var directionButtons: [UIButton]!
+    @IBOutlet var swipeGestures: [UISwipeGestureRecognizer]!
     
     //starts the game
     @IBOutlet weak var startButton: UIButton!
@@ -40,6 +41,7 @@ class SimonSaysViewController: UIViewController {
     func displayPattern(){
         startButton.isHidden = true
         enableOrDisableButtons(enable: false)
+        enableOrDisableSwipes(enable: false)
         hideShowButtons(hidden: true, alpha: 0.0)
         showPattern()
     }
@@ -71,10 +73,19 @@ class SimonSaysViewController: UIViewController {
         }
     }
     
+    func enableOrDisableSwipes(enable: Bool){
+        for swipeGesture in swipeGestures{
+            swipeGesture.isEnabled = enable
+        }
+    }
+    
     //shows all the arrows so that they can be pressed
     func showAllArrowButtons(){
         hideShowButtons(hidden: false, alpha: 1.0)
         enableOrDisableButtons(enable: true)
+        if gameType == "swipe"{
+            enableOrDisableSwipes(enable: true)
+        }
         status.isHidden = false
         simonSays.yourTurn = true
     }
@@ -143,16 +154,50 @@ class SimonSaysViewController: UIViewController {
     
     //checks to see if the button pressed is the correct button to press
     @IBAction func pressDirection(sender: UIButton) {
-        blinkColor(delay: 50, duration: 0.5, button: sender)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)){
-            if let direction = Direction.init(rawValue: sender.tag){
-                self.simonSays.checkPattern(player: direction)
-                self.checkStatus()
+        if gameType == "tap"{
+            blinkColor(delay: 50, duration: 0.5, button: sender)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)){
+                if let direction = Direction.init(rawValue: sender.tag){
+                    self.simonSays.checkPattern(player: direction)
+                    self.checkStatus()
+                }
             }
         }
     }
     
-
+    @IBAction func swipeDirection(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction{
+            case .up:
+                blinkColor(delay: 50, duration: 0.5, button: directionButtons[0])
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)){
+                    self.simonSays.checkPattern(player: Direction.Up)
+                    self.checkStatus()
+                }
+            case .right:
+                blinkColor(delay: 50, duration: 0.5, button: directionButtons[1])
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)){
+                    self.simonSays.checkPattern(player: Direction.Right)
+                    self.checkStatus()
+                }
+            case .down:
+                blinkColor(delay: 50, duration: 0.5, button: directionButtons[2])
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)){
+                    self.simonSays.checkPattern(player: Direction.Down)
+                    self.checkStatus()
+                }
+            case .left:
+                blinkColor(delay: 50, duration: 0.5, button: directionButtons[3])
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)){
+                    
+                    self.simonSays.checkPattern(player: Direction.Left)
+                    self.checkStatus()
+                    
+                }
+            default:
+                print("not a swipe option")
+        }
+    }
+    
     
     //passes information to the final score view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -160,6 +205,7 @@ class SimonSaysViewController: UIViewController {
             let finalViewController = segue.destination as! FinalScoreViewController
             finalViewController.score = simonSays.score
             finalViewController.scoreStore = scoreStore
+            finalViewController.gameType = gameType
         }
         
     }
@@ -170,5 +216,6 @@ class SimonSaysViewController: UIViewController {
         status.isHidden = true
         gameOver.isHidden = true
         enableOrDisableButtons(enable: false)
+        enableOrDisableSwipes(enable: false)
     }
 }

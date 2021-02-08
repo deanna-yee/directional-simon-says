@@ -17,7 +17,10 @@ class FinalScoreViewController: UIViewController, UITextFieldDelegate {
     //name from the UITextField
     var name: String!
     
-    //Score from the TapSimonSaysViewController segue
+    //swipe or tap depending on the type of game you played
+    var gameType: String!
+    
+    //Score from the SimonSaysViewController segue
     var score: Int!
     
     //scoreStore shared within the application
@@ -48,7 +51,11 @@ class FinalScoreViewController: UIViewController, UITextFieldDelegate {
     
     //adds the score to the array
     func addScore(){
-        scoreStore.createTapScore(name: name, scoreInt: score)
+        if gameType == "tap"{
+            scoreStore.createTapScore(name: name, scoreInt: score)
+        }else{
+            scoreStore.createSwipeScore(name: name, scoreInt: score)
+        }
     }
     
     //Adds the score to the array and goes to the table view of the top ten
@@ -57,8 +64,9 @@ class FinalScoreViewController: UIViewController, UITextFieldDelegate {
             if name != nil{
                 addScore()
             }
-            let topTenTapViewController = segue.destination as! Top10TableViewController
-            topTenTapViewController.scoreStore = scoreStore
+            let topTenViewController = segue.destination as! Top10TableViewController
+            topTenViewController.scoreStore = scoreStore
+            topTenViewController.gameType = gameType
         } else if segue.identifier == "gotoMain" {
             let mainMenuViewController = segue.destination as! MainMenuViewController
             mainMenuViewController.scoreStore = scoreStore
